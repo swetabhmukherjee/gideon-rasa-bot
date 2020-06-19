@@ -1,0 +1,48 @@
+actions:
+- action_website_options
+- utter_cheer_up
+- utter_did_that_help
+- utter_goodbye
+- utter_greet
+- utter_happy
+- utter_iamabot
+- utter_website_options
+entities:
+- type
+intents:
+- create_website_request
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+responses:
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_goodbye:
+  - text: Bye
+  utter_greet:
+  - text: Hey! This is Gideon. Your personal website builder. How can I help you today?
+  - text: Hello there. Gideon this side. How can I help you?
+  - text: Hey. Gideon here. Do you want to build a website?
+  utter_happy:
+  - text: Great, carry on!
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_website_options:
+  - buttons:
+    - payload: business
+      title: Business Website
+    - payload: education
+      title: Education Website
+    - payload: restaurant
+      title: Restaurant Website
+    text: Sure! I will help you. What type of website do you want to create?
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 60
