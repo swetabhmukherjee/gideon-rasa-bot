@@ -1,0 +1,32 @@
+<html>
+
+<head>
+<title> My Rasa Bot Webpage</title>
+<head>
+<body>
+
+<pre> This is Rasabot example, you can playb with the bot!</pre>
+
+<div id="webchat"/>
+<script src="https://storage.googleapis.com/mrbot-cdn/webchat-latest.js"></script>
+<script>
+	
+  WebChat.default.init({
+    selector: "#webchat",
+    initPayload: null,
+    customData: {"language": "en"}, // arbitrary custom data. Stay minimal as this will be added to the socket
+    socketUrl: "http://localhost:5005",
+    socketPath: "/socket.io/",
+    title: "Gideon",
+    subtitle: "You Website Assistant",
+    inputTextFieldHint: "Type your message...",
+    connectingText: "Waiting for server connection...",
+    profileAvatar: "bot-avatar.jpg",
+    showCloseButton: true
+  })
+  // user localStorage.clear();
+</script>
+
+
+</body>
+</html>
