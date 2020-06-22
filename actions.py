@@ -43,7 +43,8 @@
 
 #         return []
 from typing import Any, Text, Dict, List
-
+import webbrowser
+import os
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
@@ -60,13 +61,14 @@ class ActionSearchRestaurant(Action):
         entities = tracker.latest_message['entities']
         print(entities)
         message = ''
-
+        url = 'startbootstrap-agency-business/index.html'
+        # url = 'http://greyhathackers.ga'
         for e in entities:
         	if e['entity'] == 'type':
         		name = e['value']
      
         	if name == 'business':
-        		message = 'I will help you to create a Business Website'
+        	    webbrowser.open('file://' + os.path.realpath(url), new = 0); message = 'Do you like this template?'
         	if name == 'education':
         		message = 'I will help you to create an Education Website'
         	if name == 'restaurant':

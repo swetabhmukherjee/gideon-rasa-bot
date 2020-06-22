@@ -13,6 +13,7 @@
 - how can I create a [education](type) [website](request)?
 - I want to make a [restaurant](type) [website](request)
 - [website](request)
+- yes
 
 ## intent:greet
 - hey
@@ -30,6 +31,7 @@
 - business
 - [business](type)
 - [business](type)
+- no
 
 ## intent:bot_challenge
 - are you a bot?
