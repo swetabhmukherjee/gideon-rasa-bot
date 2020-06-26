@@ -86,3 +86,13 @@
 * goodbye
     - utter_goodbye
 * stop
+
+## interactive_story_1
+* greet
+    - utter_greet
+* create_website_request{"request": "website"}
+    - utter_website_options
+* goodbye{"type": "business"}
+    - action_website_options
+* goodbye
+    - utter_goodbye

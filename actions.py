@@ -61,20 +61,22 @@ class ActionSearchRestaurant(Action):
         entities = tracker.latest_message['entities']
         print(entities)
         message = ''
-        url = 'startbootstrap-agency-business/index.html'
+        url_business = 'startbootstrap-agency-business/index.html'
+        url_greyscale = 'startbootstrap-grayscale/index.html'
+        url_project = 'startbootstrap-landing-page/index.html'
         # url = 'http://greyhathackers.ga'
         for e in entities:
         	if e['entity'] == 'type':
         		name = e['value']
      
         	if name == 'business':
-        	    webbrowser.open('file://' + os.path.realpath(url), new = 0); message = 'Do you like this template?'
+        	    webbrowser.open('file://' + os.path.realpath(url_business)); message = 'Do you like this template?'
         	if name == 'education':
-        		message = 'I will help you to create an Education Website'
+        		webbrowser.open('file://' + os.path.realpath(url_greyscale)); message = 'Do you like this template?'
         	if name == 'restaurant':
-        		message = 'I will help you to create a Restaurant Website'
+        		webbrowser.open('file://' + os.path.realpath(url_project)); message = 'Do you like this template?'
         	
-        dispatcher.utter_message(text=message)
+        dispatcher.utter_message(message)
 
 
 

@@ -2,10 +2,10 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- create_website_request
+- greet
 - goodbye
 - stop
-- greet
-- create_website_request
 - affirm
 - deny
 - mood_great
@@ -36,10 +36,10 @@ responses:
       title: Restaurant Website
     text: Sure! I will help you. What type of website do you want to create?
 actions:
+- ->
 - action_website_options
 - utter_goodbye
 - utter_greet
 - utter_happy
 - utter_iamabot
 - utter_website_options
-- ->
