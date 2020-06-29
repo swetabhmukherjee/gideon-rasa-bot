@@ -46,6 +46,7 @@
 from selenium import webdriver
 from typing import Any, Text, Dict, List
 import time
+from sys import platform
 import webbrowser
 import pyautogui
 import os
@@ -61,7 +62,7 @@ class ActionSearchRestaurant(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
+    
         entities = tracker.latest_message['entities']
         print(entities)
         message = ''
@@ -77,13 +78,11 @@ class ActionSearchRestaurant(Action):
         		name = e['value']
      
         	if name == 'business':
-        	    webbrowser.open_new_tab('file://' + os.path.realpath(url_business)); time.sleep(1); pyautogui.keyDown('cmd','r'); message = 'Do you like this template?'
-                # ; message = 'Do you like this template?'
-                #driver = webdriver.Chrome(); driver.get('file://' + os.path.realpath(url_business)); time.sleep(1); driver.refresh(); message = 'Do you like this template?'
+        	    webbrowser.open_new_tab('file://' + os.path.realpath(url_business)); time.sleep(1); pyautogui.keyDown('cmd','r'); message = 'Do you like this template?' if platform == 'darwin' else webbrowser.open_new_tab('file://' + os.path.realpath(url_business)); time.sleep(1); pyautogui.keyDown('ctrl','r'); message = 'Do you like this template?'
         	if name == 'education':
-        		webbrowser.open('file://' + os.path.realpath(url_greyscale)); time.sleep(1); pyautogui.keyDown('cmd','r'); message = 'Do you like this template?'
+        		webbrowser.open_new_tab('file://' + os.path.realpath(url_greyscale)); time.sleep(1); pyautogui.keyDown('cmd','r'); message = 'Do you like this template?' if platform == 'darwin' else webbrowser.open_new_tab('file://' + os.path.realpath(url_greyscale)); time.sleep(1); pyautogui.keyDown('ctrl','r'); message = 'Do you like this template?'
         	if name == 'restaurant':
-        		webbrowser.open('file://' + os.path.realpath(url_project)); time.sleep(1); pyautogui.keyDown('cmd','r'); message = 'Do you like this template?'
+        		webbrowser.open_new_tab('file://' + os.path.realpath(url_project)); time.sleep(1); pyautogui.keyDown('cmd','r'); message = 'Do you like this template?' if platform == 'darwin' else webbrowser.open_new_tab('file://' + os.path.realpath(url_project)); time.sleep(1); pyautogui.keyDown('ctrl','r'); message = 'Do you like this template?'
         	
         dispatcher.utter_message(message)
 
