@@ -5,8 +5,10 @@
   - utter_website_options
 * look_for_website_type
   - action_website_options
+* ask_if_liked
+  - utter_template
 
-## story_business
+<!-- ## story_business
 * greet
     - utter_greet
 * create_website_request{"type": "business", "request": "website"}
@@ -66,7 +68,7 @@
   - utter_iamabot
  -->
 
-## interactive_story_1
+<!-- ## interactive_story_1
 * greet
     - utter_greet
 * create_website_request{"request": "website"}
@@ -95,4 +97,4 @@
 * goodbye{"type": "business"}
     - action_website_options
 * goodbye
-    - utter_goodbye
+    - utter_goodbye -->

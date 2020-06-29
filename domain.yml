@@ -12,12 +12,15 @@ intents:
 - mood_unhappy
 - bot_challenge
 - look_for_website_type
+- ask_if_liked
 entities:
 - request
 - type
 responses:
   utter_goodbye:
   - text: Bye
+  utter_template:
+  - text: Do you like this template man?
   utter_greet:
   - text: Hey! This is Gideon. Your personal website builder. How can I help you today?
   - text: Hello there. Gideon this side. How can I help you?
@@ -43,3 +46,4 @@ actions:
 - utter_happy
 - utter_iamabot
 - utter_website_options
+- utter_template

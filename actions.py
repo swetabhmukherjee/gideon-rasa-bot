@@ -39,11 +39,15 @@
 #         		message = 'I will help you to create a Restaurant Website'
         	
 #         dispatcher.utter_message(text=message)
-
+# webbrowser.open_new_tab('file://' + os.path.realpath(url_business)); message = 'Do you like this template?'
 
 #         return []
+
+from selenium import webdriver
 from typing import Any, Text, Dict, List
+import time
 import webbrowser
+import pyautogui
 import os
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
@@ -64,21 +68,23 @@ class ActionSearchRestaurant(Action):
         url_business = 'startbootstrap-agency-business/index.html'
         url_greyscale = 'startbootstrap-grayscale/index.html'
         url_project = 'startbootstrap-landing-page/index.html'
+        # driver = webdriver.Chrome()
+        # driver.get(url_business)
+        # driver.refresh()
         # url = 'http://greyhathackers.ga'
         for e in entities:
         	if e['entity'] == 'type':
         		name = e['value']
      
         	if name == 'business':
-        	    webbrowser.open('file://' + os.path.realpath(url_business)); message = 'Do you like this template?'
+        	    webbrowser.open_new_tab('file://' + os.path.realpath(url_business)); time.sleep(1); pyautogui.keyDown('cmd','r'); message = 'Do you like this template?'
+                # ; message = 'Do you like this template?'
+                #driver = webdriver.Chrome(); driver.get('file://' + os.path.realpath(url_business)); time.sleep(1); driver.refresh(); message = 'Do you like this template?'
         	if name == 'education':
-        		webbrowser.open('file://' + os.path.realpath(url_greyscale)); message = 'Do you like this template?'
+        		webbrowser.open('file://' + os.path.realpath(url_greyscale)); time.sleep(1); pyautogui.keyDown('cmd','r'); message = 'Do you like this template?'
         	if name == 'restaurant':
-        		webbrowser.open('file://' + os.path.realpath(url_project)); message = 'Do you like this template?'
+        		webbrowser.open('file://' + os.path.realpath(url_project)); time.sleep(1); pyautogui.keyDown('cmd','r'); message = 'Do you like this template?'
         	
         dispatcher.utter_message(message)
-
-
-
 
         return []

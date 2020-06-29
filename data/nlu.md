@@ -15,6 +15,10 @@
 - yes
 - [website](request)
 
+## intent:ask_if_liked
+- [Business](type) [Website](request)
+- [business](type)
+
 ## intent:greet
 - hey
 - hello

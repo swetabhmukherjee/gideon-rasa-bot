@@ -33,7 +33,7 @@
 	
   WebChat.default.init({
     selector: "#webchat",
-    initPayload: "/greet",
+    initPayload: null,
     customData: {"language": "en"}, // arbitrary custom data. Stay minimal as this will be added to the socket
     socketUrl: "http://localhost:5005",
     socketPath: "/socket.io/",
@@ -42,7 +42,8 @@
     inputTextFieldHint: "Type your message...",
     connectingText: "Waiting for server connection...",
     profileAvatar: "bot-avatar.jpg",
-    showCloseButton: true
+    showCloseButton: true,
+    storage: "session"
   })
   // user localStorage.clear();
 </script>
