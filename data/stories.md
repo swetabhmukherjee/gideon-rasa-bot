@@ -1,12 +1,14 @@
-## website creation straight path
+## website creation straight path yes
 * greet
   - utter_greet
 * create_website_request{"request": "website"}
   - utter_website_options
 * look_for_website_type
   - action_website_options
-* ask_if_liked
-  - utter_template
+* ask_if_liked{"response": "yes"}
+  - utter_good_to_hear
+* goodbye
+  - utter_goodbye
 
 <!-- ## story_business
 * greet
@@ -98,3 +100,42 @@
     - action_website_options
 * goodbye
     - utter_goodbye -->
+
+## New Story
+
+* greet
+    - utter_greet
+* create_website_request{"request":"website"}
+    - utter_website_options
+* create_website_request{"type":"business"}
+    - action_website_options
+* ask_if_liked{"response":"yes"}
+    - utter_good_to_hear
+* goodbye
+    - utter_goodbye
+
+## New Story
+
+* greet
+    - utter_greet
+* create_website_request{"request":"website"}
+    - utter_website_options
+* create_website_request{"type":"education"}
+    - action_website_options
+* ask_if_liked{"response":"yes"}
+    - utter_good_to_hear
+* goodbye
+    - utter_goodbye
+
+## New Story
+
+* greet
+    - utter_greet
+* create_website_request{"request":"website"}
+    - utter_website_options
+* create_website_request{"type":"restaurant"}
+    - action_website_options
+* ask_if_liked{"response":"yes"}
+    - utter_good_to_hear
+* goodbye
+    - utter_goodbye

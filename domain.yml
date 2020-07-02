@@ -5,22 +5,24 @@ intents:
 - create_website_request
 - greet
 - goodbye
-- stop
-- affirm
-- deny
-- mood_great
-- mood_unhappy
 - bot_challenge
 - look_for_website_type
 - ask_if_liked
+- deny
+- stop
+- mood_unhappy
+- affirm
 entities:
 - request
 - type
+- response
 responses:
   utter_goodbye:
   - text: Bye
-  utter_template:
-  - text: Do you like this template man?
+  utter_good_to_hear:
+  - text: Awesome! We've stored your preferences. Thanks for using Gideon.
+  - text: That's great. We just recorded your preferences. Have a great day. Bye
+  - text: Great that you liked it. Recorded your choice. Have a good day!
   utter_greet:
   - text: Hey! This is Gideon. Your personal website builder. How can I help you today?
   - text: Hello there. Gideon this side. How can I help you?
@@ -39,11 +41,11 @@ responses:
       title: Restaurant Website
     text: Sure! I will help you. What type of website do you want to create?
 actions:
-- ->
 - action_website_options
 - utter_goodbye
 - utter_greet
 - utter_happy
 - utter_iamabot
 - utter_website_options
-- utter_template
+- utter_good_to_hear
+- ->

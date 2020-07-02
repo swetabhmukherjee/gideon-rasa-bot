@@ -12,12 +12,15 @@
 - [restaurant](type)
 - how can I create a [education](type) [website](request)?
 - I want to make a [restaurant](type) [website](request)
-- yes
 - [website](request)
 
 ## intent:ask_if_liked
-- [Business](type) [Website](request)
-- [business](type)
+- [yes](response)
+- [yes](response) I want this
+- [yes](response) I like this
+- get me this one
+- [yes](response) please
+- this is great
 
 ## intent:greet
 - hey
@@ -32,11 +35,6 @@
 - goodbye
 - see you around
 - see you later
-- business
-- [business](type)
-- no
-- [business](type)
-- yes
 
 ## intent:bot_challenge
 - are you a bot?

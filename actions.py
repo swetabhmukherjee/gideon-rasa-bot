@@ -65,7 +65,7 @@ class ActionSearchRestaurant(Action):
     
         entities = tracker.latest_message['entities']
         print(entities)
-        message = ''
+        message = '';name =''
         url_business = 'startbootstrap-agency-business/index.html'
         url_greyscale = 'startbootstrap-grayscale/index.html'
         url_project = 'startbootstrap-landing-page/index.html'
