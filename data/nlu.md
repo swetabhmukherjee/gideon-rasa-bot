@@ -21,6 +21,9 @@
 - get me this one
 - [yes](response) please
 - this is great
+- [no](response)
+- [no](response) I don't like it
+
 
 ## intent:greet
 - hey
