@@ -16,14 +16,7 @@
 
 ## intent:ask_if_liked
 - [yes](response)
-- [yes](response) I want this
-- [yes](response) I like this
-- get me this one
-- [yes](response) please
-- this is great
 - [no](response)
-- [no](response) I don't like it
-
 
 ## intent:greet
 - hey
