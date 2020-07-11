@@ -7,7 +7,7 @@
   - action_website_options
   - utter_do_you_like
 * ask_if_liked{"response": "yes"}
-  - utter_good_to_hear
+  - action_liked_or_not
 * goodbye
   - utter_goodbye
 
@@ -20,104 +20,32 @@
   - action_website_options
   - utter_do_you_like
 * ask_if_liked{"response": "no"}
-  - action_not_liked
+  - action_liked_or_not
   - utter_do_you_like
 * ask_if_liked{"response": "yes"}
-  - utter_good_to_hear
+  - action_liked_or_not
 * goodbye
   - utter_goodbye
 
-
-<!-- ## story_business
-* greet
-    - utter_greet
-* create_website_request{"type": "business", "request": "website"}
-    - action_website_options
-* goodbye
-    - utter_goodbye
-
-## story_education
-* greet
-    - utter_greet
-* create_website_request{"type": "education", "request": "website"}
-    - action_website_options
-* goodbye
-    - utter_goodbye
-
-## story_restaurant
-* greet
-    - utter_greet
-* create_website_request{"type": "restaurant", "request": "website"}
-    - action_website_options
-* goodbye
-    - utter_goodbye
-
-
-
-
-<!-- ## happy path
+<!-- ## website creation straight path no two iter
 * greet
   - utter_greet
-* mood_great
-  - utter_happy
-
-## sad path 1
-* greet
-  - utter_greet
-* mood_unhappy
-  - utter_cheer_up
-  - utter_did_that_help
-* affirm
-  - utter_happy
-
-## sad path 2
-* greet
-  - utter_greet
-* mood_unhappy
-  - utter_cheer_up
-  - utter_did_that_help
-* deny
-  - utter_goodbye
-
-## say goodbye
+* create_website_request{"request": "website"}
+  - utter_website_options
+* look_for_website_type
+  - action_website_options
+  - utter_do_you_like
+* ask_if_liked{"response": "no"}
+  - action_liked_or_not
+  - utter_do_you_like
+* ask_if_liked{"response": "no"}
+  - action_liked_or_not_iter2
+  - utter_do_you_like
+* ask_if_liked{"response": "yes"}
+  - action_liked_or_not
 * goodbye
   - utter_goodbye
  -->
-<!-- ## bot challenge
-* bot_challenge
-  - utter_iamabot
- -->
-
-<!-- ## interactive_story_1
-* greet
-    - utter_greet
-* create_website_request{"request": "website"}
-    - utter_website_options
-* goodbye{"type": "business"}
-    - action_website_options
-* goodbye
-    - utter_goodbye
-
-## interactive_story_1
-* greet
-    - utter_greet
-* create_website_request{"request": "website"}
-    - utter_website_options
-* goodbye{"type": "business"}
-    - action_website_options
-* goodbye
-    - utter_goodbye
-* stop
-
-## interactive_story_1
-* greet
-    - utter_greet
-* create_website_request{"request": "website"}
-    - utter_website_options
-* goodbye{"type": "business"}
-    - action_website_options
-* goodbye
-    - utter_goodbye -->
 
 ## New Story
 
@@ -129,7 +57,7 @@
     - action_website_options
     - utter_do_you_like
 * ask_if_liked{"response":"yes"}
-    - utter_good_to_hear
+    - action_liked_or_not
 * goodbye
     - utter_goodbye
 
@@ -143,7 +71,7 @@
     - action_website_options
     - utter_do_you_like
 * ask_if_liked{"response":"yes"}
-    - utter_good_to_hear
+    - action_liked_or_not
 * goodbye
     - utter_goodbye
 
@@ -157,6 +85,6 @@
     - action_website_options
     - utter_do_you_like
 * ask_if_liked{"response":"yes"}
-    - utter_good_to_hear
+    - action_liked_or_not
 * goodbye
     - utter_goodbye

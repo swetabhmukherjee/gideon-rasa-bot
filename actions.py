@@ -86,7 +86,7 @@ class ActionSearchRestaurant(Action):
 class ActionNotLiked(Action):
 
     def name(self) -> Text:
-        return "action_not_liked"
+        return "action_liked_or_not"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -102,8 +102,38 @@ class ActionNotLiked(Action):
         if e['entity'] == 'response':
             response = e['value']
             
+            if response == 'yes':
+                dispatcher.utter_message(text='Awesome! We have stored your preferences. Thanks for using Gideon. This is actions.py response')
             if response == 'no':
                 webbrowser.open_new_tab('file://' + os.path.realpath(url_greyscale))
               
-          
+class ActionNotLiked2(Action):         
+
+    def name(self) -> Text:
+        return "action_liked_or_not_iter2"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+      entities = tracker.latest_message['entities']
+      print(entities)
+      a = ActionSearchRestaurant()
+      print(a.name())
+
+
+      for e in entities:
+        if e['entity'] == 'response':
+            response = e['value']
+            
+            if response == 'yes':
+                dispatcher.utter_message(text='Awesome! We have stored your preferences. Thanks for using Gideon. This is actions.py response')
+            if response == 'no':
+                webbrowser.open_new_tab('file://' + os.path.realpath(url_project))
+              
+
+
+
+
+
         # dispatcher.utter_message(text=message)

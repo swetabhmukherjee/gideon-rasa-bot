@@ -33,7 +33,6 @@ responses:
   utter_greet:
   - text: Hey! This is Gideon. Your personal website builder. How can I help you today?
   - text: Hello there. Gideon this side. How can I help you?
-  - text: Hey. Gideon here. Do you want to build a website?
   utter_happy:
   - text: Great, carry on!
   utter_iamabot:
@@ -56,5 +55,7 @@ actions:
 - utter_do_you_like
 - utter_website_options
 - utter_good_to_hear
+- action_liked_or_not
+- action_liked_or_not_iter2
 - action_not_liked
 - ->
