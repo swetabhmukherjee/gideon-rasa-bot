@@ -13,6 +13,7 @@
 - how can I create a [education](type) [website](request)?
 - I want to make a [restaurant](type) [website](request)
 - create a [website](request)
+- I want to make a [website](request)
 - [business](type)
 
 ## intent:ask_if_liked
@@ -27,12 +28,14 @@
 - good morning
 - good evening
 - hey there
+- hii
 
 ## intent:goodbye
 - bye
 - goodbye
 - see you around
 - see you later
+- ok bye
 
 ## intent:bot_challenge
 - are you a bot?

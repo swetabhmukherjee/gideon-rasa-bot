@@ -15,10 +15,10 @@ entities:
 - response
 - type
 intents:
-- create_website_request
 - ask_if_liked
-- goodbye
+- create_website_request
 - greet
+- goodbye
 - stop
 - bot_challenge
 - look_for_website_type
