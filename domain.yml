@@ -1,24 +1,31 @@
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
-intents:
-- create_website_request
-- greet
-- goodbye
-- bot_challenge
-- look_for_website_type
-- ask_if_liked
-- deny
-- stop
-- mood_unhappy
-- affirm
+actions:
+- action_liked_or_not
+- action_liked_or_not_iter2
+- action_liked_or_not_iter3
+- action_website_options
+- utter_do_you_like
+- utter_good_to_hear
+- utter_goodbye
+- utter_greet
+- utter_happy
+- utter_iamabot
+- utter_website_options
 entities:
 - request
-- type
 - response
+- type
+intents:
+- create_website_request
+- ask_if_liked
+- goodbye
+- greet
+- stop
+- bot_challenge
+- look_for_website_type
+- deny
+- mood_unhappy
+- affirm
 responses:
-  utter_goodbye:
-  - text: Bye
   utter_do_you_like:
   - buttons:
     - payload: yes
@@ -30,6 +37,8 @@ responses:
   - text: Awesome! We've stored your preferences. Thanks for using Gideon.
   - text: That's great. We just recorded your preferences. Have a great day. Bye
   - text: Great that you liked it. Recorded your choice. Have a good day!
+  utter_goodbye:
+  - text: Bye
   utter_greet:
   - text: Hey! This is Gideon. Your personal website builder. How can I help you today?
   - text: Hello there. Gideon this side. How can I help you?
@@ -46,16 +55,6 @@ responses:
     - payload: restaurant
       title: Restaurant Website
     text: Sure! I will help you. What type of website do you want to create?
-actions:
-- action_website_options
-- utter_goodbye
-- utter_greet
-- utter_happy
-- utter_iamabot
-- utter_do_you_like
-- utter_website_options
-- utter_good_to_hear
-- action_liked_or_not
-- action_liked_or_not_iter2
-- action_not_liked
-- ->
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 60

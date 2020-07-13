@@ -27,7 +27,7 @@
 * goodbye
   - utter_goodbye
 
-<!-- ## website creation straight path no two iter
+## website creation straight path no two iter
 * greet
   - utter_greet
 * create_website_request{"request": "website"}
@@ -45,7 +45,7 @@
   - action_liked_or_not
 * goodbye
   - utter_goodbye
- -->
+
 
 ## New Story
 
@@ -86,5 +86,44 @@
     - utter_do_you_like
 * ask_if_liked{"response":"yes"}
     - action_liked_or_not
+* goodbye
+    - utter_goodbye
+
+## interactive_story_1
+* greet
+    - utter_greet
+* create_website_request{"request": "website"}
+    - utter_website_options
+* create_website_request{"type": "business"}
+    - action_website_options
+    - utter_do_you_like
+* ask_if_liked{"response": "no"}
+    - action_liked_or_not
+    - utter_do_you_like
+* ask_if_liked{"response": "no"}
+    - action_liked_or_not_iter2
+    - utter_do_you_like
+* ask_if_liked{"response": "yes"}
+    - action_liked_or_not
+* goodbye
+    - utter_goodbye
+* stop
+
+## interactive_story_1
+* greet
+    - utter_greet
+* create_website_request{"request": "website"}
+    - utter_website_options
+* create_website_request{"type": "business"}
+    - action_website_options
+    - utter_do_you_like
+* ask_if_liked{"response": "no"}
+    - action_liked_or_not
+    - utter_do_you_like
+* ask_if_liked{"response": "no"}
+    - action_liked_or_not_iter2
+    - utter_do_you_like
+* ask_if_liked{"response": "no"}
+    - action_liked_or_not_iter3
 * goodbye
     - utter_goodbye

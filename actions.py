@@ -67,7 +67,7 @@ class ActionSearchRestaurant(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
     
         entities = tracker.latest_message['entities']
-        print(entities)
+        # print(entities)
         for e in entities:
         	if e['entity'] == 'type':
         		name = e['value']
@@ -93,9 +93,9 @@ class ActionNotLiked(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
       entities = tracker.latest_message['entities']
-      print(entities)
-      a = ActionSearchRestaurant()
-      print(a.name())
+      # print(entities)
+      # a = ActionSearchRestaurant()
+      # print(a.name())
 
 
       for e in entities:
@@ -117,9 +117,9 @@ class ActionNotLiked2(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
       entities = tracker.latest_message['entities']
-      print(entities)
-      a = ActionSearchRestaurant()
-      print(a.name())
+      # print(entities)
+      # a = ActionSearchRestaurant()
+      # print(a.name())
 
 
       for e in entities:
@@ -130,6 +130,31 @@ class ActionNotLiked2(Action):
                 dispatcher.utter_message(text='Awesome! We have stored your preferences. Thanks for using Gideon. This is actions.py response')
             if response == 'no':
                 webbrowser.open_new_tab('file://' + os.path.realpath(url_project))
+              
+
+class ActionNotLiked3(Action):         
+
+    def name(self) -> Text:
+        return "action_liked_or_not_iter3"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+      entities = tracker.latest_message['entities']
+      # print(entities)
+      # a = ActionSearchRestaurant()
+      # print(a.name())
+
+
+      for e in entities:
+        if e['entity'] == 'response':
+            response = e['value']
+            
+            if response == 'yes':
+                dispatcher.utter_message(text='Awesome! We have stored your preferences. Thanks for using Gideon. This is actions.py response')
+            if response == 'no':
+                dispatcher.utter_message(text='Uh Oh! It seems you have liked none of our templates. We will soon come up with new ones. Stay tuned!')
               
 
 

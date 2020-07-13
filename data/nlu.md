@@ -12,10 +12,12 @@
 - [restaurant](type)
 - how can I create a [education](type) [website](request)?
 - I want to make a [restaurant](type) [website](request)
-- [website](request)
+- create a [website](request)
+- [business](type)
 
 ## intent:ask_if_liked
 - [yes](response)
+- [no](response)
 - [no](response)
 
 ## intent:greet
